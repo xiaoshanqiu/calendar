@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	ul{
+		width: 270px;
+		margin: 50px auto;
+		overflow: hidden;
+	}
+	ul li{
+		width: 80px;
+		height: 80px;
+		margin: 0 10px 10px 0;
+		text-align: center;
+		background: black;
+		color: #fff;
+		list-style: none;
+		float: left;
+	}
+	#content{
+		margin-left: 550px;
+	}
+	.active{
+		background: pink;
+		color: black;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var arr = ['爆竹声中一岁除，春风送暖入屠苏.千门万户曈曈日，总把新桃换旧符。',
+							 '不知细叶谁裁出，二月春风似剪刀',
+							 '烟花三月下扬州',
+							 '人间四月芳菲尽',
+							 '五月五日天晴朗，杨花绕江啼晓莺',
+							 '六月栖栖，戎车既饬',
+							 '七月流火，九月授衣',
+							 '昔年八月十五夜，曲江池畔杏园边',
+							 '九月九日眺山川，归心望及风烟',
+							 '十全十美的是我们的回忆不朽',
+							 '乱花渐欲迷人眼，浅草才能没马蹄',
+							 '春风又绿江南岸，明月何时照我还'
+						];
+		var oul = document.getElementById('ul');
+		var ali =oul.getElementsByTagName('li');
+		var otxt = document.getElementById('content');
+
+		for(var i=0;i<ali.length;i++){
+			ali[i].index=i;
+			ali[i].onmouseover = function(){
+				for(var i=0;i<ali.length;i++){
+					ali[i].className = '';
+				}
+				this.className = 'active';
+				otxt.innerHTML = '<h2>关于'+(this.index+1)+'月</h2><p>'+arr[this.index]+'</p>'
+			}
+		}
+
+	}
+
+</script>
+
+<body>
+
+	<ul id="ul">
+		<li class="active"><h2>1</h2><p>JAN.</p></li>
+		<li><h2>2</h2><p>Feb.</p></li>
+		<li><h2>3</h2><p>Mar.</p></li>
+		<li><h2>4</h2><p>Apr.</p></li>
+		<li><h2>5</h2><p>May.</p></li>
+		<li><h2>6</h2><p>Jun.</p></li>
+		<li><h2>7</h2><p>Jul.</p></li>
+		<li><h2>8</h2><p>Aug.</p></li>
+		<li><h2>9</h2><p>Sep.</p></li>
+		<li><h2>10</h2><p>Oct.</p></li>
+		<li><h2>11</h2><p>Nov.</p></li>
+		<li><h2>12</h2><p>Dec.</p></li>
+	</ul>
+
+	<div id="content">
+		<h2>关于一月</h2>
+		<p>爆竹声中一岁除，春风送暖入屠苏。千门万户曈曈日，总把新桃换旧符。</p>
+	</div>
+</body>
+</html>
